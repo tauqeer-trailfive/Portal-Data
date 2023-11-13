@@ -76,7 +76,7 @@ export default function App() {
       ),
       city: "Amsterdam",
       country: "Netherland",
-      ShortUrl: "https://shorturl.at/kosz1",
+      ShortUrl: "https://shorturl.at/knFLX",
     },
     {
       jobTitle: "Medisch Assistent Verpleegzorg (MAV) @ Warande",
@@ -146,7 +146,7 @@ export default function App() {
       ),
       city: "Amsterdam",
       country: "Netherland",
-      ShortUrl: "https://shorturl.at/HINVX",
+      ShortUrl: "https://shorturl.at/vTVX9",
     },
     {
       jobTitle: "Stukadoor/Spackspuiter",
@@ -209,7 +209,7 @@ export default function App() {
       ),
       city: "Amsterdam",
       country: "Netherland",
-      ShortUrl: "https://shorturl.at/gvIRU",
+      ShortUrl: "https://shorturl.at/kCFP7",
     },
   ];
   return (

@@ -215,10 +215,10 @@ const Board = (props: BoardProps) => {
   return (
     <section className="bg-white dark:bg-gray-900 max-w-2xl px-10 rounded-xl shadow-2xl my-2">
       <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16">
-        <h2 className="mb-2 text-xl font-semibold leading-none text-gray-900 md:text-2xl dark:text-white">
+        <h2 className="mb-2 text-xl font-black leading-none text-gray-900 md:text-2xl dark:text-white">
           {props.jobTitle}
         </h2>
-        <h4 className="mb-2 text-xl font-light leading-none text-gray-900 md:text-lg dark:text-white">
+        <h4 className="mb-2 text-md font-light leading-6 text-gray-900 md:text-md dark:text-white">
           {props.teaser}
         </h4>
         <p className="mb-4 text-xl font-medium leading-none text-gray-900 md:text-md dark:text-white">
@@ -248,31 +248,34 @@ const Board = (props: BoardProps) => {
           </div>
         </dl>
         <div className="flex items-center space-x-4">
-          <button
-            // href={props.ShortUrl}
-            onClick={() => {
-              setIsOpen(true);
-            }}
+          <a
+            href={props.ShortUrl}
+            // onClick={() => {
+            //   setIsOpen(true);
+            // }}
             type="button"
-            // target="_blank"
-            className="inline-flex items-center text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-500 dark:hover:bg-red-600 dark:focus:ring-red-900"
+            target="_blank"
+            className="inline-flex items-center justify-center text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium normal-case rounded-lg text-md px-5 py-2.5 text-center dark:bg-red-500 dark:hover:bg-red-600 dark:focus:ring-red-900"
           >
+            Apply
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-6 h-6 mr-3"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              className="w-4 h-4 ml-2"
             >
               <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"
+                fillRule="evenodd"
+                d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z"
+                clipRule="evenodd"
+              />
+              <path
+                fillRule="evenodd"
+                d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z"
+                clipRule="evenodd"
               />
             </svg>
-            Apply
-          </button>
+          </a>
         </div>
       </div>
       <FormModal />

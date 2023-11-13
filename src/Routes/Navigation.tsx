@@ -10,7 +10,7 @@ export default function Navigation({}: Props) {
   return (
     <Routes>
       <Route path="/" element={<App />} />
-      <Route path="/success" element={<Success />} />
+      {/* <Route path="/success" element={<Success />}  /> */}
     </Routes>
   );
 }
