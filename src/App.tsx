@@ -18,6 +18,14 @@ export default function App() {
         "In deze functie wil jij graag mensen beter maken in hun werk en streef je er naar om de kwaliteit in de organisatie te verbeteren.",
       jobDetail: (
         <div className="max-w-xl mx-auto">
+          <noscript>
+            <iframe
+              src="https://www.googletagmanager.com/ns.html?id=GTM-NXGNXGL6"
+              height="0"
+              width="0"
+              style={{ visibility: "hidden", display: "none" }}
+            ></iframe>
+          </noscript>
           <details className="open:bg-white dark:open:bg-slate-900   open:shadow-lg p-6 rounded-lg">
             <summary className="cursor-pointer text-sm leading-6 text-slate-900 dark:text-white font-semibold select-none">
               Job Details
