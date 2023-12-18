@@ -249,6 +249,7 @@ const Board = (props: BoardProps) => {
         </dl>
         <div className="flex items-center space-x-4">
           <a
+            id="apply-button"
             href={props.ShortUrl}
             // onClick={() => {
             //   setIsOpen(true);
