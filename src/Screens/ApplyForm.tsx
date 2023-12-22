@@ -25,6 +25,7 @@ export default function Client({}: Props) {
       !form?.name.trim() ||
       !form?.email?.trim() ||
       form?.number === null ||
+      form?.number.length.toString() < 11 ||
       !form.gender ||
       !form?.motivation.trim() ||
       !form.description.trim()
@@ -158,6 +159,11 @@ export default function Client({}: Props) {
               {checkEmpty && form?.number === null && (
                 <p className="text-red-600 dark:text-red-500">
                   Phone Number is required
+                </p>
+              )}
+              {form?.number !== null && form?.number.toString().length < 11 && (
+                <p className="text-red-600 dark:text-red-500">
+                  Phone Number should be greater than 11 characters
                 </p>
               )}
             </div>
