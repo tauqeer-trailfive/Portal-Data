@@ -12,7 +12,7 @@ export default function Navigation({}: Props) {
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/apply" element={<ApplyForm />} />
-      {/* <Route path="/success" element={<Success />}  /> */}
+      <Route path="/success" element={<Success />} />
     </Routes>
   );
 }
