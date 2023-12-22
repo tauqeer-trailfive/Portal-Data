@@ -190,7 +190,7 @@ export default function Client({}: Props) {
               </select>
               {checkEmpty && !form.gender && (
                 <p className="text-red-600 dark:text-red-500">
-                  Select atleast nne gender
+                  Select atleast one gender
                 </p>
               )}
             </div>
