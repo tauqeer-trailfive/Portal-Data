@@ -7,6 +7,7 @@ type Props = {};
 export default function Client({}: Props) {
   const navigate = useNavigate();
 
+  const [checkEmpty, setCheckEmpty] = useState<boolean>(false);
   const [form, setForm] = useState<any>({
     name: "",
     email: "",
@@ -16,36 +17,27 @@ export default function Client({}: Props) {
     description: "",
   });
 
-  useEffect(() => {
-    console.log("form", form);
-  }, [form]);
-
   const validateForm = () => {
     if (
       !form?.name.trim() ||
       !form?.email?.trim() ||
       form?.number === null ||
-      form?.number.length.toString() < 11 ||
+      (form?.number !== undefined && form?.number.toString().length < 11) ||
       !form.gender ||
       !form?.motivation.trim() ||
       !form.description.trim()
     ) {
-      console.log("in");
       showToast("Please fill all the feilds", "error");
       return false;
     }
-    console.log("out");
     return true;
   };
-
-  const [checkEmpty, setCheckEmpty] = useState(false);
 
   const handleSubmit = () => {
     setCheckEmpty(true);
     if (validateForm()) {
-      console.log("submit");
+      navigate("/success");
     }
-    console.log("not submit");
   };
 
   return (
@@ -143,7 +135,8 @@ export default function Client({}: Props) {
                 Phone Number
               </label>
               <input
-                type="tel"
+                // type="tel"
+                type="number"
                 className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700  
                   ${
                     checkEmpty && form?.number === null
