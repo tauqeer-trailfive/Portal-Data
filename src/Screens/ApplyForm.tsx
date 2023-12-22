@@ -1,10 +1,52 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { showToast } from "../Toaster/Toaster";
 
 type Props = {};
 
 export default function Client({}: Props) {
   const navigate = useNavigate();
+
+  const [form, setForm] = useState<any>({
+    name: "",
+    email: "",
+    number: null,
+    gender: "",
+    motivation: "",
+    description: "",
+  });
+
+  useEffect(() => {
+    console.log("form", form);
+  }, [form]);
+
+  const validateForm = () => {
+    if (
+      !form?.name.trim() ||
+      !form?.email?.trim() ||
+      form?.number === null ||
+      !form.gender ||
+      !form?.motivation.trim() ||
+      !form.description.trim()
+    ) {
+      console.log("in");
+      showToast("Please fill all the feilds", "error");
+      return false;
+    }
+    console.log("out");
+    return true;
+  };
+
+  const [checkEmpty, setCheckEmpty] = useState(false);
+
+  const handleSubmit = () => {
+    setCheckEmpty(true);
+    if (validateForm()) {
+      console.log("submit");
+    }
+    console.log("not submit");
+  };
+
   return (
     <section className="bg-white dark:bg-gray-900 min-h-screen">
       <noscript>
@@ -51,11 +93,22 @@ export default function Client({}: Props) {
               </label>
               <input
                 type="text"
-                name="name"
-                id="name"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 
+                ${
+                  checkEmpty && !form?.name.trim()
+                    ? "dark:border-red-600"
+                    : "dark:border-gray-600"
+                } dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500`}
                 placeholder="Full Name"
+                value={form?.name}
+                onChange={(e) => setForm({ ...form, name: e.target.value })}
               />
+
+              {checkEmpty && !form?.name.trim() && (
+                <p className="text-red-600 dark:text-red-500">
+                  Name is required
+                </p>
+              )}
             </div>
             <div className="w-full">
               <label
@@ -66,11 +119,20 @@ export default function Client({}: Props) {
               </label>
               <input
                 type="email"
-                name="email"
-                id="email"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5   ${
+                  checkEmpty && !form?.email.trim()
+                    ? "dark:border-red-600"
+                    : "dark:border-gray-600"
+                } dark:bg-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500`}
                 placeholder="Email Address"
+                value={form?.email}
+                onChange={(e) => setForm({ ...form, email: e.target.value })}
               />
+              {checkEmpty && !form?.email.trim() && (
+                <p className="text-red-600 dark:text-red-500">
+                  Email is required
+                </p>
+              )}
             </div>
             <div className="w-full">
               <label
@@ -80,12 +142,24 @@ export default function Client({}: Props) {
                 Phone Number
               </label>
               <input
-                type="number"
-                name="phone"
-                id="phone"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                type="tel"
+                className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700  
+                  ${
+                    checkEmpty && form?.number === null
+                      ? "dark:border-red-600"
+                      : "dark:border-gray-600"
+                  } dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500`}
                 placeholder="Phone Number"
+                value={form?.number}
+                onChange={(e) =>
+                  setForm({ ...form, number: parseInt(e.target.value) })
+                }
               />
+              {checkEmpty && form?.number === null && (
+                <p className="text-red-600 dark:text-red-500">
+                  Phone Number is required
+                </p>
+              )}
             </div>
             <div>
               <label
@@ -96,12 +170,23 @@ export default function Client({}: Props) {
               </label>
               <select
                 id="gender"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700  
+                 ${
+                   checkEmpty && !form.gender
+                     ? "dark:border-red-600"
+                     : "dark:border-gray-600"
+                 } dark:border-gray-600  dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500`}
+                onChange={(e) => setForm({ ...form, gender: e.target.value })}
               >
                 <option selected={true}>Select gender</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
               </select>
+              {checkEmpty && !form.gender && (
+                <p className="text-red-600 dark:text-red-500">
+                  Select atleast nne gender
+                </p>
+              )}
             </div>
             <div>
               <label
@@ -112,11 +197,22 @@ export default function Client({}: Props) {
               </label>
               <input
                 type="text"
-                name="Motivation"
-                id="Motivation"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700   ${
+                  checkEmpty && !form.motivation.trim()
+                    ? "dark:border-red-600"
+                    : "dark:border-gray-600"
+                } dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500`}
                 placeholder="Motivation"
+                value={form?.motivation}
+                onChange={(e) =>
+                  setForm({ ...form, motivation: e.target.value })
+                }
               />
+              {checkEmpty && !form.motivation.trim() && (
+                <p className="text-red-600 dark:text-red-500">
+                  Motivation is required
+                </p>
+              )}
             </div>
             <div className="sm:col-span-2">
               <label
@@ -126,11 +222,23 @@ export default function Client({}: Props) {
                 Description
               </label>
               <textarea
-                id="description"
                 rows={8}
-                className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                className={`block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700   ${
+                  checkEmpty && !form?.description.trim()
+                    ? "dark:border-red-600"
+                    : "dark:border-gray-600"
+                } dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500`}
                 placeholder="Your description here"
+                value={form?.description}
+                onChange={(e) =>
+                  setForm({ ...form, description: e.target.value })
+                }
               ></textarea>
+              {checkEmpty && !form.description.trim() && (
+                <p className="text-red-600 dark:text-red-500">
+                  Please fill the description
+                </p>
+              )}
             </div>
           </div>
 
@@ -168,14 +276,21 @@ export default function Client({}: Props) {
           </div>
 
           <div className="mt-4">
-            <Link
+            {/* <Link
               id="Submit-Form"
               to={"/success"}
               type="button"
               className="inline-flex justify-center rounded-md border w-full border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
             >
               Submit Now
-            </Link>
+            </Link> */}
+            <button
+              type="button"
+              className="inline-flex justify-center rounded-md border w-full border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+              onClick={handleSubmit}
+            >
+              Submit Now
+            </button>
           </div>
         </form>
       </div>
