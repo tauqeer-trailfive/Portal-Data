@@ -50,6 +50,16 @@ export default function Client({}: Props) {
           style={{ display: "none", visibility: "hidden" }}
         ></iframe>
       </noscript>
+      {/* <!-- Google Tag Manager (noscript) --> Moiz*/}
+      <noscript>
+        <iframe
+          src="https://www.googletagmanager.com/ns.html?id=GTM-52CF7Q6R"
+          height="0"
+          width="0"
+          style={{ visibility: "hidden", display: "none" }}
+        ></iframe>
+      </noscript>
+      {/* <!-- End Google Tag Manager (noscript) --> Moiz*/}
       <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16">
         <button
           onClick={() => navigate(-1)}
@@ -112,6 +122,7 @@ export default function Client({}: Props) {
                 Email
               </label>
               <input
+                id="email"
                 type="email"
                 className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5   ${
                   checkEmpty && !form?.email.trim()
@@ -136,6 +147,7 @@ export default function Client({}: Props) {
                 Phone Number
               </label>
               <input
+                id="number"
                 // type="tel"
                 type="number"
                 className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700  
@@ -196,6 +208,7 @@ export default function Client({}: Props) {
                 Motivation
               </label>
               <input
+                id="motivation"
                 type="text"
                 className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700   ${
                   checkEmpty && !form.motivation.trim()
@@ -222,6 +235,7 @@ export default function Client({}: Props) {
                 Description
               </label>
               <textarea
+                id="description"
                 rows={8}
                 className={`block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700   ${
                   checkEmpty && !form?.description.trim()

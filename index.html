@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Matomo -->
     <script>
+      console.log("Matomo Script");
       var _paq = (window._paq = window._paq || []);
       /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
       _paq.push(["trackPageView"]);
@@ -29,8 +30,9 @@
       })();
     </script>
     <!-- End Matomo Code -->
-    <!-- Google Tag Manager -->
+    <!-- Google Tag Manager 1 -->
     <script>
+      console.log("Google Tag Manager");
       (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
@@ -42,9 +44,24 @@
         f.parentNode.insertBefore(j, f);
       })(window, document, "script", "dataLayer", "GTM-NXGNXGL6");
     </script>
-    <!-- End Google Tag Manager -->
+    <!-- End Google Tag Manager 1 -->
+    <!-- Google Tag Manager 2 Moiz -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-52CF7Q6R");
+    </script>
+    <!-- End Google Tag Manager 2 Moiz -->
     <!-- Matomo Tag Manager -->
     <script>
+      console.log("Matomo Tag Manager");
       var _mtm = (window._mtm = window._mtm || []);
       _mtm.push({ "mtm.startTime": new Date().getTime(), event: "mtm.Start" });
       (function () {

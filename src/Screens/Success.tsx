@@ -5,6 +5,24 @@ type Props = {};
 const Success = (props: Props) => {
   return (
     <section className="bg-white dark:bg-gray-900 min-h-screen flex flex-col items-center justify-center">
+      <noscript>
+        <iframe
+          src="https://www.googletagmanager.com/ns.html?id=GTM-NXGNXGL6"
+          height="0"
+          width="0"
+          style={{ visibility: "hidden", display: "none" }}
+        ></iframe>
+      </noscript>
+      {/* <!-- Google Tag Manager (noscript) --> */}
+      <noscript>
+        <iframe
+          src="https://www.googletagmanager.com/ns.html?id=GTM-52CF7Q6R"
+          height="0"
+          width="0"
+          style={{ visibility: "hidden", display: "none" }}
+        ></iframe>
+      </noscript>
+      {/* <!-- End Google Tag Manager (noscript) --> */}
       <div className="relative p-4 w-full max-w-md h-full md:h-auto">
         <div className="relative p-4 text-center bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5">
           <button
