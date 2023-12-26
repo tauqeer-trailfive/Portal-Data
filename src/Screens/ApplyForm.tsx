@@ -22,7 +22,7 @@ export default function Client({}: Props) {
       !form?.name.trim() ||
       !form?.email?.trim() ||
       form?.number === null ||
-      (form?.number !== undefined && form?.number.toString().length < 11) ||
+      (form?.number !== undefined && form?.number.toString().length <= 5) ||
       !form.gender ||
       !form?.motivation.trim() ||
       !form.description.trim()
@@ -148,6 +148,7 @@ export default function Client({}: Props) {
               </label>
               <input
                 id="number"
+                maxLength={5}
                 // type="tel"
                 type="number"
                 className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700  
@@ -167,9 +168,9 @@ export default function Client({}: Props) {
                   Phone Number is required
                 </p>
               )}
-              {form?.number !== null && form?.number.toString().length < 11 && (
+              {form?.number !== null && form?.number.toString().length <= 5 && (
                 <p className="text-red-600 dark:text-red-500">
-                  Phone Number should be greater than 11 characters
+                  Phone Number should be 5 characters
                 </p>
               )}
             </div>
