@@ -7,7 +7,7 @@ import ApplyForm from "../Screens/ApplyForm";
 
 type Props = {};
 
-export default function Navigation({}: Props) {
+export default function Navigation({ }: Props) {
   return (
     <Routes>
       <Route path="/" element={<App />} />

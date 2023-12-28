@@ -279,7 +279,8 @@ const Board = (props: BoardProps) => {
           </a> */}
           <Link
             id="apply-button"
-            to={"/apply"}
+            to={`/apply`}
+            state={{ vacancyName: props.jobTitle }}
             // onClick={() => {
             //   setIsOpen(true);
             // }}

@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate, } from "react-router-dom";
 import { showToast } from "../Toaster/Toaster";
 
 type Props = {};
 
 export default function Client({ }: Props) {
   const navigate = useNavigate();
+  let { state } = useLocation();
+
+
+
 
   const [checkEmpty, setCheckEmpty] = useState<boolean>(false);
   const [form, setForm] = useState<any>({
@@ -77,6 +81,8 @@ export default function Client({ }: Props) {
       (window as any).dataLayer = (window as any).dataLayer || [];
       (window as any).dataLayer.push({
         event: "formSubmission",
+        formID: timestamp,
+        vacancyName: state.vacancyName,
         form: {
           name: form.name,
           email: form.email,
@@ -84,7 +90,7 @@ export default function Client({ }: Props) {
           gender: form.gender,
           motivation: form.motivation,
           description: form.description,
-          formID: timestamp,
+
         },
       });
       (window as any).dataLayer = [];
