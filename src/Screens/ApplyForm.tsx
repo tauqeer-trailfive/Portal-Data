@@ -74,8 +74,6 @@ export default function Client({ }: Props) {
     setCheckEmpty(true);
     if (validateForm()) {
       const timestamp = new Date().getTime().toString();
-      console.log("timestamp", timestamp);
-
       (window as any).dataLayer = (window as any).dataLayer || [];
       (window as any).dataLayer.push({
         event: "formSubmission",
@@ -86,7 +84,7 @@ export default function Client({ }: Props) {
           gender: form.gender,
           motivation: form.motivation,
           description: form.description,
-          id: timestamp,
+          formID: timestamp,
         },
       });
       (window as any).dataLayer = [];
