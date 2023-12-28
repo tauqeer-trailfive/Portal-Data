@@ -48,21 +48,33 @@ export default function Client({}: Props) {
     });
   };
 
+  useEffect(() => {
+    const dataObject = {
+      event: "formSubmission",
+      form: {
+        name: form.name,
+        email: form.email,
+        number: form.number,
+        gender: form.gender,
+        motivation: form.motivation,
+        description: form.description,
+      },
+    };
+
+    (window as any).dataLayer = (window as any).dataLayer || [];
+    (window as any).dataLayer.push(dataObject);
+
+    return () => {
+      const index = (window as any).dataLayer.indexOf(dataObject);
+      if (index !== -1) {
+        (window as any).dataLayer.splice(index, 1);
+      }
+    };
+  }, [form]);
+
   const handleSubmit = () => {
     setCheckEmpty(true);
     if (validateForm()) {
-      (window as any).dataLayer = (window as any).dataLayer || [];
-      (window as any).dataLayer.push({
-        event: "formSubmission",
-        form: {
-          name: form.name,
-          email: form.email,
-          number: form.number,
-          gender: form.gender,
-          motivation: form.motivation,
-          description: form.description,
-        },
-      });
       resetForm();
       navigate("/success");
     }
