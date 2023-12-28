@@ -17,6 +17,10 @@ export default function Client({}: Props) {
     description: "",
   });
 
+  useEffect(() => {
+    console.log("form", form);
+  }, [form]);
+
   const validateForm = () => {
     if (
       !form?.name.trim() ||
@@ -31,6 +35,17 @@ export default function Client({}: Props) {
       return false;
     }
     return true;
+  };
+
+  const resetForm = () => {
+    setForm({
+      name: "",
+      email: "",
+      number: null,
+      gender: "",
+      motivation: "",
+      description: "",
+    });
   };
 
   const handleSubmit = () => {
@@ -48,6 +63,7 @@ export default function Client({}: Props) {
           description: form.description,
         },
       });
+      resetForm();
       navigate("/success");
     }
   };
