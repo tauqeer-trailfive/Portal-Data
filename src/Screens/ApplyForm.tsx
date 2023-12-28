@@ -17,10 +17,6 @@ export default function Client({}: Props) {
     description: "",
   });
 
-  useEffect(() => {
-    console.log("form", form);
-  }, [form]);
-
   const validateForm = () => {
     if (
       !form?.name.trim() ||
