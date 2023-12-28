@@ -36,6 +36,18 @@ export default function Client({}: Props) {
   const handleSubmit = () => {
     setCheckEmpty(true);
     if (validateForm()) {
+      (window as any).dataLayer = (window as any).dataLayer || [];
+      (window as any).dataLayer.push({
+        event: "formSubmission",
+        form: {
+          name: form.name,
+          email: form.email,
+          number: form.number,
+          gender: form.gender,
+          motivation: form.motivation,
+          description: form.description,
+        },
+      });
       navigate("/success");
     }
   };
