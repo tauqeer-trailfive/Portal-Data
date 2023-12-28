@@ -66,7 +66,7 @@ export default function Client({}: Props) {
         (window as any).dataLayer.splice(index, 1);
       }
     };
-  }, [form]);
+  }, []);
 
   const handleSubmit = () => {
     setCheckEmpty(true);
