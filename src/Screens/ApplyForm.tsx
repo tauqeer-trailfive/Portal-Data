@@ -92,9 +92,22 @@ export default function Client({ }: Props) {
           description: form.description,
 
         },
+
       });
       (window as any).dataLayer = [];
 
+      (window as any)._mtm = (window as any)._mtm || [];
+      (window as any)._mtm.push({
+        event: 'formSubmission',
+        form: {
+          name: form.name,
+          email: form.email,
+          number: form.number,
+          gender: form.gender,
+          motivation: form.motivation,
+          description: form.description,
+        },
+      });
       resetForm();
       navigate("/success");
       // window.location.reload();
