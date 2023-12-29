@@ -1,6 +1,6 @@
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 type BoardProps = {
   jobTitle: string;
@@ -12,6 +12,7 @@ type BoardProps = {
 };
 
 const Board = (props: BoardProps) => {
+
   let [isOpen, setIsOpen] = useState(false);
 
   function closeModal() {
