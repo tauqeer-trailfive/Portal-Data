@@ -159,7 +159,7 @@ export default function Client({ }: Props) {
         <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">
           Fill the form
         </h2>
-        <form action="#">
+        <form action="#" id="job-apply">
           <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
             <div className="sm:col-span-2">
               <label
