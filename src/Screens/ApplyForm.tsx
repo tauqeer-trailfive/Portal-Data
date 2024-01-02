@@ -92,14 +92,12 @@ export default function Client({ }: Props) {
       (window as any)._mtm = (window as any)._mtm || [];
       (window as any)._mtm.push({
         event: "formSubmission",
-        form: {
-          name: form.name,
-          email: form.email,
-          number: form.number,
-          gender: form.gender,
-          motivation: form.motivation,
-          description: form.description,
-        },
+        name: form.name,
+        email: form.email,
+        number: form.number,
+        gender: form.gender,
+        motivation: form.motivation,
+        description: form.description,
       });
       resetForm();
       navigate("/success");
