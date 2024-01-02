@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation, useNavigate, } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { showToast } from "../Toaster/Toaster";
 
 type Props = {};
 
-export default function Client({ }: Props) {
+export default function Client({}: Props) {
   const navigate = useNavigate();
   let { state } = useLocation();
-
-
-
 
   const [checkEmpty, setCheckEmpty] = useState<boolean>(false);
   const [form, setForm] = useState<any>({
@@ -20,8 +17,6 @@ export default function Client({ }: Props) {
     motivation: "",
     description: "",
   });
-
-
 
   const validateForm = () => {
     if (
@@ -90,15 +85,13 @@ export default function Client({ }: Props) {
           gender: form.gender,
           motivation: form.motivation,
           description: form.description,
-
         },
-
       });
       (window as any).dataLayer = [];
 
       (window as any)._mtm = (window as any)._mtm || [];
       (window as any)._mtm.push({
-        event: 'formSubmission',
+        event: "formSubmission",
         form: {
           name: form.name,
           email: form.email,
@@ -172,10 +165,11 @@ export default function Client({ }: Props) {
                 id="name"
                 type="text"
                 className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 
-                ${checkEmpty && !form?.name.trim()
+                ${
+                  checkEmpty && !form?.name.trim()
                     ? "dark:border-red-600"
                     : "dark:border-gray-600"
-                  } dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500`}
+                } dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500`}
                 placeholder="Full Name"
                 value={form?.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
@@ -197,10 +191,11 @@ export default function Client({ }: Props) {
               <input
                 id="email"
                 type="email"
-                className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5   ${checkEmpty && !form?.email.trim()
-                  ? "dark:border-red-600"
-                  : "dark:border-gray-600"
-                  } dark:bg-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500`}
+                className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5   ${
+                  checkEmpty && !form?.email.trim()
+                    ? "dark:border-red-600"
+                    : "dark:border-gray-600"
+                } dark:bg-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500`}
                 placeholder="Email Address"
                 value={form?.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
@@ -224,9 +219,10 @@ export default function Client({ }: Props) {
                 // type="tel"
                 type="number"
                 className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700  
-                  ${checkEmpty && form?.number === null
-                    ? "dark:border-red-600"
-                    : "dark:border-gray-600"
+                  ${
+                    checkEmpty && form?.number === null
+                      ? "dark:border-red-600"
+                      : "dark:border-gray-600"
                   } dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500`}
                 placeholder="Phone Number"
                 value={form?.number}
@@ -255,10 +251,11 @@ export default function Client({ }: Props) {
               <select
                 id="gender"
                 className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700  
-                 ${checkEmpty && !form.gender
-                    ? "dark:border-red-600"
-                    : "dark:border-gray-600"
-                  } dark:border-gray-600  dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500`}
+                 ${
+                   checkEmpty && !form.gender
+                     ? "dark:border-red-600"
+                     : "dark:border-gray-600"
+                 } dark:border-gray-600  dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500`}
                 onChange={(e) => setForm({ ...form, gender: e.target.value })}
               >
                 <option selected={true}>Select gender</option>
@@ -281,10 +278,11 @@ export default function Client({ }: Props) {
               <input
                 id="motivation"
                 type="text"
-                className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700   ${checkEmpty && !form.motivation.trim()
-                  ? "dark:border-red-600"
-                  : "dark:border-gray-600"
-                  } dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500`}
+                className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700   ${
+                  checkEmpty && !form.motivation.trim()
+                    ? "dark:border-red-600"
+                    : "dark:border-gray-600"
+                } dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500`}
                 placeholder="Motivation"
                 value={form?.motivation}
                 onChange={(e) =>
@@ -307,10 +305,11 @@ export default function Client({ }: Props) {
               <textarea
                 id="description"
                 rows={8}
-                className={`block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700   ${checkEmpty && !form?.description.trim()
-                  ? "dark:border-red-600"
-                  : "dark:border-gray-600"
-                  } dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500`}
+                className={`block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700   ${
+                  checkEmpty && !form?.description.trim()
+                    ? "dark:border-red-600"
+                    : "dark:border-gray-600"
+                } dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500`}
                 placeholder="Your description here"
                 value={form?.description}
                 onChange={(e) =>
