@@ -103,12 +103,12 @@ export default function Client({ }: Props) {
       resetForm();
       navigate("/success");
       // window.location.reload();
-      const mtmScript = document.createElement("script");
-      mtmScript.type = "text/javascript";
-      mtmScript.async = true;
-      mtmScript.defer = true;
-      mtmScript.src = "https://cdn.matomo.cloud/trailfivetesting.matomo.cloud/container_cNCgDX42.js";
-      document.head.appendChild(mtmScript);
+      // const mtmScript = document.createElement("script");
+      // mtmScript.type = "text/javascript";
+      // mtmScript.async = true;
+      // mtmScript.defer = true;
+      // mtmScript.src = "https://cdn.matomo.cloud/trailfivetesting.matomo.cloud/container_cNCgDX42.js";
+      // document.head.appendChild(mtmScript);
     }
   };
 
