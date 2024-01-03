@@ -91,7 +91,7 @@ export default function Client({ }: Props) {
 
       (window as any)._mtm = (window as any)._mtm || [];
       (window as any)._mtm.push({
-        event: "formSubmission",
+        'event': 'formSubmission',
         formID: timestamp,
         form: {
           name: form.name,
