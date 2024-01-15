@@ -118,24 +118,8 @@ export default function Client({ }: Props) {
 
   return (
     <section className="bg-white dark:bg-gray-900 min-h-screen">
-      <noscript>
-        <iframe
-          src="https://www.googletagmanager.com/ns.html?id=GTM-NXGNXGL6"
-          height="0"
-          width="0"
-          style={{ display: "none", visibility: "hidden" }}
-        ></iframe>
-      </noscript>
-      {/* <!-- Google Tag Manager (noscript) --> Moiz*/}
-      <noscript>
-        <iframe
-          src="https://www.googletagmanager.com/ns.html?id=GTM-52CF7Q6R"
-          height="0"
-          width="0"
-          style={{ visibility: "hidden", display: "none" }}
-        ></iframe>
-      </noscript>
-      {/* <!-- End Google Tag Manager (noscript) --> Moiz*/}
+
+
       <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16">
         <button
           onClick={() => navigate(-1)}
