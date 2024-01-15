@@ -100,15 +100,19 @@ export default function Client({ }: Props) {
         motivation: form.motivation,
         description: form.description,
       });
+      // (window as any)._mtm = (window as any)._mtm || [];
+      // (window as any)._mtm.push({
+      //   event: 'formSubmission',
+      //   formID: timestamp,
+      //   name: form.name,
+      //   email: form.email,
+      //   number: form.number,
+      //   gender: form.gender,
+      //   motivation: form.motivation,
+      //   description: form.description,
+      // });
       resetForm();
       navigate("/success");
-      // window.location.reload();
-      // const mtmScript = document.createElement("script");
-      // mtmScript.type = "text/javascript";
-      // mtmScript.async = true;
-      // mtmScript.defer = true;
-      // mtmScript.src = "https://cdn.matomo.cloud/trailfivetesting.matomo.cloud/container_cNCgDX42.js";
-      // document.head.appendChild(mtmScript);
     }
   };
 
