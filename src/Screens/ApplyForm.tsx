@@ -69,6 +69,29 @@ export default function Client({ }: Props) {
   //   };
   // }, [form]);
 
+  function injectGoogleTagManagerScripts() {
+    const script1 = document.createElement("noscript");
+    script1.innerHTML = `
+    <iframe
+      src="https://www.googletagmanager.com/ns.html?id=GTM-NXGNXGL6"
+      height="0"
+      width="0"
+      style="display: none; visibility: hidden;"
+    ></iframe>
+  `;
+    document.head.appendChild(script1);
+
+    const script2 = document.createElement("noscript");
+    script2.innerHTML = `
+    <iframe
+      src="https://www.googletagmanager.com/ns.html?id=GTM-52CF7Q6R"
+      height="0"
+      width="0"
+      style="visibility: hidden; display: none;"
+    ></iframe>
+  `;
+    document.head.appendChild(script2);
+  }
 
   const handleSubmit = () => {
     setCheckEmpty(true);
@@ -103,7 +126,7 @@ export default function Client({ }: Props) {
       });
       resetForm();
       navigate("/success");
-
+      injectGoogleTagManagerScripts()
 
 
 
