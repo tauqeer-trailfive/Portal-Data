@@ -102,6 +102,7 @@ export default function Client({ }: Props) {
       });
       resetForm();
       navigate("/success");
+      window.location.reload();
     }
   };
 
