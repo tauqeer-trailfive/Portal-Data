@@ -88,6 +88,12 @@ export default function Client({ }: Props) {
           description: form.description,
         },
       });
+
+      // Push virtual pageview event
+      (window as any).dataLayer.push({
+        event: "virtualPageview",
+        page: "/formSubmission"
+      });
       (window as any).dataLayer = [];
 
       (window as any)._mtm = (window as any)._mtm || [];
