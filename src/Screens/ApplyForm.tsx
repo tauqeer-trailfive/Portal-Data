@@ -69,15 +69,7 @@ export default function Client({ }: Props) {
   //   };
   // }, [form]);
 
-  const reloadGTM = () => {
-    const gtmScript = document.querySelector('script[src*="gtm.js"]');
-    if (gtmScript) {
-      const newGtmScript = document.createElement('script');
-      newGtmScript.src = gtmScript.src;
-      newGtmScript.async = true;
-      gtmScript.parentNode.replaceChild(newGtmScript, gtmScript);
-    }
-  };
+
   const handleSubmit = () => {
     setCheckEmpty(true);
     if (validateForm()) {
@@ -111,7 +103,6 @@ export default function Client({ }: Props) {
       });
       resetForm();
       navigate("/success");
-      reloadGTM();
 
     }
   };
