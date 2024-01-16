@@ -74,7 +74,7 @@ const Success = (props: Props) => {
             Continue
           </a> */}
           <button data-modal-toggle="successModal"
-            type="button" onClick={() => navigate("/")} className="py-2 px-3 text-sm font-medium text-center text-gray-950 dark:text-white border border-gray-950 dark:border-white rounded-lg bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:focus:ring-primary-900">Continue</button>
+            type="button" onClick={() => { navigate("/"); window.location.reload() }} className="py-2 px-3 text-sm font-medium text-center text-gray-950 dark:text-white border border-gray-950 dark:border-white rounded-lg bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:focus:ring-primary-900">Continue</button>
         </div>
       </div>
     </section>
