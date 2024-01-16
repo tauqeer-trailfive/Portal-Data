@@ -103,10 +103,12 @@ export default function Client({ }: Props) {
       });
       resetForm();
       navigate("/success");
-
-
-
-
+      var gtmScript = document.createElement("script");
+      gtmScript.type = "text/javascript";
+      gtmScript.async = true;
+      gtmScript.src =
+        "https://www.googletagmanager.com/gtm.js?id=GTM-52CF7Q6R";
+      document.head.appendChild(gtmScript);
     }
   };
 
