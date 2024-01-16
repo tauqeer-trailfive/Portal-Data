@@ -65,16 +65,16 @@ const Success = (props: Props) => {
           <p className="mb-4 text-lg font-semibold text-gray-900 dark:text-white">
             Successfully Applied.
           </p>
-          <a
+          {/* <a
             href="/"
             data-modal-toggle="successModal"
             type="button"
             className="py-2 px-3 text-sm font-medium text-center text-gray-950 dark:text-white border border-gray-950 dark:border-white rounded-lg bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:focus:ring-primary-900"
           >
             Continue
-          </a>
-          {/* <button data-modal-toggle="successModal"
-            type="button" onClick={() => { navigate("/") }} className="py-2 px-3 text-sm font-medium text-center text-gray-950 dark:text-white border border-gray-950 dark:border-white rounded-lg bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:focus:ring-primary-900">Continue</button> */}
+          </a> */}
+          <button data-modal-toggle="successModal"
+            type="button" onClick={() => { navigate("/") }} className="py-2 px-3 text-sm font-medium text-center text-gray-950 dark:text-white border border-gray-950 dark:border-white rounded-lg bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:focus:ring-primary-900">Continue</button>
         </div>
       </div>
     </section>
