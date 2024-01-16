@@ -4,20 +4,6 @@ type Props = {};
 
 const Success = (props: Props) => {
   const navigate = useNavigate()
-
-  const handleButtonClick = () => {
-    // Navigate to the board page
-    navigate("/");
-
-    // Insert the noscript elements into the DOM
-    const script1 = document.createElement("noscript");
-    script1.innerHTML = `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXGNXGL6" height="0" width="0" style="display:none;visibility:hidden;"></iframe>`;
-    document.body.appendChild(script1);
-
-    const script2 = document.createElement("noscript");
-    script2.innerHTML = `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-52CF7Q6R" height="0" width="0" style="display:none;visibility:hidden;"></iframe>`;
-    document.body.appendChild(script2);
-  };
   return (
     <section className="bg-white dark:bg-gray-900 min-h-screen flex flex-col items-center justify-center">
       <noscript>
@@ -88,7 +74,7 @@ const Success = (props: Props) => {
             Continue
           </a> */}
           <button data-modal-toggle="successModal"
-            type="button" onClick={handleButtonClick} className="py-2 px-3 text-sm font-medium text-center text-gray-950 dark:text-white border border-gray-950 dark:border-white rounded-lg bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:focus:ring-primary-900">Continue</button>
+            type="button" onClick={() => navigate("/")} className="py-2 px-3 text-sm font-medium text-center text-gray-950 dark:text-white border border-gray-950 dark:border-white rounded-lg bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:focus:ring-primary-900">Continue</button>
         </div>
       </div>
     </section>
