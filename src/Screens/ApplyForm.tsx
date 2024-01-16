@@ -102,10 +102,8 @@ export default function Client({ }: Props) {
         description: form.description,
       });
       resetForm();
-      navigate("/success");
-
-
-
+      (window as any).dataLayer.push({ event: "virtualPageview", page: "/success" });
+      // navigate("/success");
 
     }
   };
