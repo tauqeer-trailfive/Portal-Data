@@ -104,11 +104,16 @@ export default function Client({ }: Props) {
       resetForm();
       navigate("/success");
 
+
+
+
     }
   };
 
   return (
     <section className="bg-white dark:bg-gray-900 min-h-screen">
+
+
       <noscript>
         <iframe
           src="https://www.googletagmanager.com/ns.html?id=GTM-NXGNXGL6"
