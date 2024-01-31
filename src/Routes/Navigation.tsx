@@ -4,6 +4,7 @@ import Board from "../Screens/Board";
 import App from "../App";
 import Success from "../Screens/Success";
 import ApplyForm from "../Screens/ApplyForm";
+import PageNotFound from "../Screens/PageNotFound";
 
 type Props = {};
 
@@ -13,6 +14,7 @@ export default function Navigation({ }: Props) {
       <Route path="/" element={<App />} />
       <Route path="/apply" element={<ApplyForm />} />
       <Route path="/success" element={<Success />} />
+      <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
 }
